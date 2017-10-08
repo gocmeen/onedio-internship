@@ -1,0 +1,110 @@
+<% include partials/header %>
+
+<div class="page-container" ></div>
+
+<div id="landing-page" class="container default_container" style="display: block;">
+	    <h1>landing page</h1>
+	    <hr>
+	    <hr>
+	    <button type="button" class="btn" id="matchUsers"
+	    		onclick="getElementById(&quot;landing-page&quot;).style.display = &quot;none&quot;;
+	    		getElementById('starting-page').style.display = &quot;block&quot;; readySignal();">Play</button>
+
+</div>
+
+
+
+<div id="starting-page" class="container default_container"  style="display: none;">
+
+    <h1>starting page</h1>
+    <button type="button" class="btn" disabled="true" id="startGame" 
+				onclick="getElementById(&quot;starting-page&quot;).style.display = &quot;none&quot;;
+	    		getElementById(&quot;question-page&quot;).style.display = &quot;block&quot;; startSignal(); initQuiz();">Start Game</button>
+
+</div>
+
+
+
+<div id="question-page"   style="display: none;">
+	<div >
+
+			<div class="question-container">
+				<h6 id="count">1 of 10</h6>
+				<h1 id="q"> </h1>
+			</div>
+			
+			<div class="buttons-container" >
+				<button class="buttons" id="1" ></button>
+				<button class="buttons" id="2" ></button>
+				<button class="buttons" id="3" ></button>
+				<button class="buttons" id="4" ></button>
+			</div>
+
+	</div>
+
+	<div id = "status-bar">
+
+		<div class="countdown ">
+		    <h4 id="countdown-number">0</h4>
+		    <svg width="100" height="100" >
+		     <g>
+		      <title>Layer 1</title>
+		      <circle id="circle" class="circle_animation" r="43.66" cy="51" cx="51" stroke-width="5" stroke="#6fdb6f" fill="none"/>
+		     </g>
+		    </svg>
+		</div>
+		<!-- <div class="countdown">
+			<h4 id="countdown-number"></h4>
+		</div> -->
+
+		<div class="scores">
+			<div class="progress">
+			    <span  id="percent-user">Your Score: 0</span>
+    			<div id="bar-user"></div>
+			</div>
+
+			<div class="progress">
+			    <span  id="percent-opponent">Opponent Score: 0</span>
+    			<div id="bar-opponent"></div>
+			</div>
+		</div>
+	</div>
+<!--<div class="countdown">-->
+<!--  <div class="countdown-number"></div>-->
+<!--  <svg>-->
+<!--    <circle r="18" cx="20" cy="20"></circle>-->
+<!--  </svg>-->
+<!--</div>-->
+
+<!-- 	<div class="item html">
+	    <h4 id="countdown-number">0</h4>
+	    <svg width="160" height="160" xmlns="http://www.w3.org/2000/svg">
+	     <g>
+	      <title>Layer 1</title>
+	      <circle id="circle" class="circle_animation" r="69.85699" cy="81" cx="81" stroke-width="8" stroke="#6fdb6f" fill="none"/>
+	     </g>
+	    </svg>
+	</div> -->
+</div>
+
+
+
+<div id="result-page" class="container default_container" style="display: none;">
+
+	    <h1>result page</h1>
+	    <h4 id="user-result"></h4>
+	    <h4 id="opponent-result"></h4>
+</div>
+
+
+
+<div id="again-page" class="container default_container" style="display: none;">
+
+	    <h1>again page</h1>
+	    <button type="button" class="btn" 
+	    		onclick="getElementById(&quot;landing-page&quot;).style.display = &quot;block&quot;;
+	    		getElementById(&quot;again-page&quot;).style.display = &quot;none&quot;; reset();">Play Again</button>
+
+</div>
+
+<% include partials/footer %>
